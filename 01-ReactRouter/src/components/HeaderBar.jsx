@@ -48,6 +48,16 @@ function HeaderBar() {
                   Contact
                 </NavLink>
               </li>
+              <li className="list-style-none my-3 mx-4">
+                <NavLink
+                  to="/search"
+                  className={({ isActive }) =>
+                    `${isActive ? "navActive" : "navUnactive"}  `
+                  }
+                >
+                  Search
+                </NavLink>
+              </li>
             </ul>
           </nav>
         </div>

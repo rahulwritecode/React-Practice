@@ -14,6 +14,8 @@ import HomePage from "./pages/HomePage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import ServicePage from "./pages/ServicePage.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
+import ServiceType from "./pages/ServiceType.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +24,10 @@ const router = createBrowserRouter(
       <Route path="about" element={<AboutPage />} />
       <Route path="service" element={<ServicePage />} />
       <Route path="contact" element={<ContactPage />} />
+      <Route path="search" element={<SearchPage />} />
+
+      {/* useParams hook */}
+      <Route path="service/:serviceName" element={<ServiceType />} />
 
       {/* redirect link to set path in navigate */}
       {/* <Route path="/*" element={<Navigate to="/" />} /> */}
