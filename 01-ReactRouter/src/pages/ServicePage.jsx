@@ -11,7 +11,11 @@ function ServicePage() {
             <div className="row">
               <div className="col-md-4">
                 <h3 className="text-center">
-                  <Link to="/service/website-development">
+                  <Link
+                    to="/service/website-development"
+                    hash="#header"
+                    state={{ service: "Website development" }}
+                  >
                     Website Development
                   </Link>
                 </h3>
