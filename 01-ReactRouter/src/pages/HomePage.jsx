@@ -8,7 +8,7 @@ function HomePage() {
 
         <div className="offset-wrap pt-5">
           <div className="container">
-            <div className="row">
+            <div className="row justify-content-center">
               <div className="col-md-2 offset-md-1">
                 <div className="div-wrap bg-info">
                   <h3 className="text-center">1</h3>

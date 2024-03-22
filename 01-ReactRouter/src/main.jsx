@@ -16,15 +16,20 @@ import ServicePage from "./pages/ServicePage.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import ServiceType from "./pages/ServiceType.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import Protected from "./components/Protected.jsx";
+import LogoutBtnPage from "./pages/LogoutBtnPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="" element={<HomePage />} />
-      <Route path="about" element={<AboutPage />} />
-      <Route path="service" element={<ServicePage />} />
-      <Route path="contact" element={<ContactPage />} />
+      <Route path="about" element={<Protected Component={AboutPage} />} />
+      <Route path="service" element={<Protected Component={ServicePage} />} />
+      <Route path="contact" element={<Protected Component={ContactPage} />} />
       <Route path="search" element={<SearchPage />} />
+      <Route path="login" element={<LoginPage />} />
+      <Route path="logout" element={<LogoutBtnPage />} />
 
       {/* useParams hook */}
       <Route path="service/:serviceName" element={<ServiceType />} />

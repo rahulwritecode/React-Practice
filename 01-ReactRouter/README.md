@@ -13,3 +13,5 @@
 6] useLocation()
 
 7] Link and NavLink with isActive for active class
+
+8] protected routing used for login authentication and restrict user to acces certain page only after login

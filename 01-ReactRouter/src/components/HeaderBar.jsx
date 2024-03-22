@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 function HeaderBar() {
+  useEffect(() => {
+    let login = localStorage.getItem("login");
+    console.log("local storage = ", login);
+  }, []);
+
   return (
     <>
       <div className="header-wrapper py-3 bg-dark">
@@ -58,6 +63,30 @@ function HeaderBar() {
                   Search
                 </NavLink>
               </li>
+
+              {localStorage.getItem("login") ? (
+                <li className="list-style-none my-3 mx-4">
+                  <NavLink
+                    to="/logout"
+                    className={({ isActive }) =>
+                      `${isActive ? "navActive" : "navUnactive"}  `
+                    }
+                  >
+                    Logout
+                  </NavLink>
+                </li>
+              ) : (
+                <li className="list-style-none my-3 mx-4">
+                  <NavLink
+                    to="/login"
+                    className={({ isActive }) =>
+                      `${isActive ? "navActive" : "navUnactive"}  `
+                    }
+                  >
+                    Login
+                  </NavLink>
+                </li>
+              )}
             </ul>
           </nav>
         </div>
