@@ -38,8 +38,9 @@ function HandleApiCall() {
   return (
     <>
       <div className="pt-5 py-3">
-        <h1 className="text-center">Api Handling</h1>
+        <h1 className="text-center">Direct Link Fetch Api Handling</h1>
       </div>
+      <div className="container"></div>
 
       <div className="container ">
         {error ? (
@@ -49,11 +50,20 @@ function HandleApiCall() {
         ) : (
           <>
             <h2 className="my-3">Api Data Fetch Successully !</h2>
-            <ul>
-              {apiData.map((item, index) => (
-                <li key={item.id}>{item.name}</li>
+            <table className="">
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+              </tr>
+              {apiData.map((val) => (
+                <tr key={val.id}>
+                  <td>{val.id}</td>
+                  <td>{val.name}</td>
+                  <td>{val.address.city}</td>
+                </tr>
               ))}
-            </ul>
+            </table>
           </>
         )}
       </div>
