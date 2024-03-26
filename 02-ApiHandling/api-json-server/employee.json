@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul",
+    "salary": 80000,
+    "age": 25
+  },
+  {
+    "id": 2,
+    "name": "Rohan",
+    "salary": 100000,
+    "age": 25
+  },
+  {
+    "id": 3,
+    "name": "Mukesh",
+    "salary": 120000,
+    "age": 26
+  },
+  {
+    "id": 4,
+    "name": "Dhiraj",
+    "salary": 700000,
+    "age": 28
+  },
+  {
+    "id": 5,
+    "name": "Prasad",
+    "salary": 450000,
+    "age": 30
+  },
+  {
+    "id": 6,
+    "name": "Ayush",
+    "salary": 450000,
+    "age": 32
+  },
+  {
+    "id": 7,
+    "name": "Prakash",
+    "salary": 450000,
+    "age": 37
+  },
+  {
+    "id": 8,
+    "name": "Mehul",
+    "salary": 650000,
+    "age": 21
+  },
+  {
+    "id": 9,
+    "name": "Abhishekh",
+    "salary": 750000,
+    "age": 33
+  },
+  {
+    "id": 10,
+    "name": "Neha",
+    "salary": 450000,
+    "age": 30
+  },
+  {
+    "id": 11,
+    "name": "Kabir",
+    "salary": 480000,
+    "age": 30
+  },
+  {
+    "id": 12,
+    "name": "Ramesh",
+    "salary": 550000,
+    "age": 30
+  }
+]

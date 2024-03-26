@@ -28,8 +28,7 @@ function FetchApiOperation() {
   };
 
   useEffect(() => {
-    apiCall1(`${API_LINK}/posts`);
-
+    // apiCall1(`${API_LINK}/posts`);
     apiCall2();
   }, []);
 

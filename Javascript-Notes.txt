@@ -1,0 +1,93 @@
+Aysnc Javascript
+
+JS Nature
+--> Synchronous Nature
+which means all operation are performed in sequential order.
+
+--> Single threaded Language
+all process will be executed in single thread process so man of you  say is is slow becoz doent not have multithread feature like java
+but most of the time js is run on  runtime environment like browser or nodejs 
+
+This are all behaviour of default javascript
+
+Blocking code (stop the other execution until it current code is completely executed) => Sunchronous Behaviour
+Non blocking code (it runs the code on parallel basis without ) => Asynchronous Behaviour 
+
+use cases of Synchronous behaviour
+Database storage system follows blocking code system, once the data is stored in database then only the successfully stored notification will appear to user else notification of retry
+
+use cases of Asynchronous behaviour
+While fetching the data from API multiple function run simultaneously one function of fetching api data and other function executing other function task 
+
+
+JS Engine
+|-----------------|
+|   Call stack    |
+|   Memory Heap   |
+|                 |
+|                 | 
+|-----------------| 
+
+
+JS has 2 Environment system
+Browser - Web API
+DOM (DOM can only found in web api means only in browser environment cannot be found in node environment)
+
+
+
+Node Js / Deno
+JS Object 
+setTimeout()
+
+
+fetch Api (priority Queue)
+
+
+Javascript Execution context 
+-> execute one line code at a time
+-> Each operation waits for the last one to complete before executing new one.
+
+
+eg
+console.log("Hello World !!");
+powershell -ExecutionPolicy Bypass -File script.ps1
+
+Javascript Data type memory storage system stack memory and Heap memory
+-> stack memory store primitive data type value 
+-> Heap memory store the non primitive data type reference value 
+
+How does Javascript execute code (execution context) and + call stack ?
+Javascript execution context 
+
+1] JS take code convert them into global execution context and the data is store in "this" keyword
+Global Execution context differ for difference environement engine 
+browser has "window" object
+deno , node  
+
+a] Global Execution Context
+b] Function Execution Context
+c] Eval Execution context
+
+
+Phase 1 => Memory Creation Phase (Creation phase)
+
+Phase 2 => Execution phase
+
+phase 3 => 
+
+
+Code Execution Process
+
+phase 1 => Create Global execution and allocate it in "this" object in browser "this" is window object 
+phase 2 => create memory phase in this engine fetched all variable and store value if allotted or it will store undefined
+phase 3 => create execution phase 
+phase 4 => 
+
+
+
+Call Stack 
+
+1] Global Execution
+2] 
+
+
