@@ -2,6 +2,15 @@ import React from "react";
 // import asyncData from "../JS-Practice/AsyncPractice.js";
 
 function JSPractice() {
+  // simple example of asynchronous website
+
+  console.log("Testing 1");
+  setTimeout(function () {
+    console.log("Testing 2");
+  }, 5000);
+
+  console.log("Testing 3");
+
   // Javascript is Sychronous, Single threaded language, it has one call stack and it can just do one thing at time !
   // Callback function ()
 
@@ -10,7 +19,7 @@ function JSPractice() {
   }
 
   const dataPromise = getData();
-  console.log(dataPromise);
+  // console.log(dataPromise);
 
   //   output
   //   Promise {<fulfilled>: 'Testing Async function !'}
@@ -18,12 +27,12 @@ function JSPractice() {
   //  Note : always remember promise data can only be fetched through .then chain function
   //  now we can apply .then() on obove promise output data to get promise object value
 
-  dataPromise.then((res) =>
-    console.log(
-      "promise data value fetched through .then() chain function = ",
-      res
-    )
-  );
+  // dataPromise.then((res) =>
+  //   console.log(
+  //     "promise data value fetched through .then() chain function = ",
+  //     res
+  //   )
+  // );
 
   return (
     <>
@@ -36,8 +45,8 @@ function JSPractice() {
             <b>
               <u>
                 1] Callback Hell which also called Pyramid of Doom (calling
-                multiple nested callback function ){" "}
-              </u>{" "}
+                multiple nested callback function )
+              </u>
             </b>
             <br /> <br />
             <b>
