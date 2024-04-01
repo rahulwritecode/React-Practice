@@ -11,7 +11,7 @@ but it is good only upto 2 level only, more than that lead to your software at r
 2] callback hell = multilevel callback  lead to increase in code complexity which is difficult to maintained, operate and understand as it grows code horizontally, this type of situation also call 
 pyramid of  Doom.
 
-example below
+example are as follows
 */
 
 function fetchNum(n1, n2) {
