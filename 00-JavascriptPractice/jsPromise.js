@@ -15,7 +15,7 @@ rejected: meaning that the operation failed.
 it is where the data is store inside it 
 
 Promise has inbuilt function with 2 predefine argument resolve and reject
-promise is immutable
+promise object are immutable therefore one of the best to use for async api operation because it could not be manipulated.
 
 example are as follows
 fetch() => fetch is an async function and as we know async function always return value as promise 
@@ -24,6 +24,9 @@ fetch() => fetch is an async function and as we know async function always retur
 
 so rather than passing callback function as an argument we are attaching callback function using .then() 
 
+then() => is a special chaining fucntion is of which is attached to promise object to perform operation 
+
+promise object value cannot be access directly.
 
 */
 
@@ -35,6 +38,121 @@ const userData = fetch(USER_API_LINK);
 
 console.log(userData);
 
-fetch(USER_API_LINK)
-  .then((res) => res.json())
-  .then((ret) => console.log(ret));
+fetch(USER_API_LINK).then((res) => res.json());
+
+/*
+  How .then() chain function help us to prevent callback hell situation
+
+  here it is an example of callback hell
+  */
+
+const cart = ["tshirt", "shirt", "pants", "books"];
+
+function createOrder(cart) {
+  proceedToPayment(orderId, function (paymentInfo) {
+    showOrderInvoice(
+      paymentInfo,
+      function sendInvoiceEmail(userName, userEmail) {
+        console.log("Invoice is emailed to ", userName, " on Email", userEmail);
+      }
+    );
+  });
+}
+
+/* 
+this above callback hell problem is solved with .then chain function call promise chaining 
+checkout below solution 
+*/
+
+// normal function
+// createOrderData(cart)
+//   .then(function (orderId) {
+//     return proceedToPayment(orderId);
+//   })
+//   .then(function (paymentInfo) {
+//     return showOrderInvoice(paymentInfo);
+//   })
+//   .then(function (paymentInfo) {
+//     return sendInvoiceEmail(paymentInfo, username, usermail);
+//   });
+
+// arrow function
+// createOrderData(cart)
+//   .then((orderId) => proceedToPayment(orderId))
+//   .then((paymentInfo) => showOrderInvoice(paymentInfo))
+//   .then((paymentInfo) => sendInvoiceEmail(paymentInfo, username, usermail));
+
+/*
+ always have a note 
+
+ function should be return other wise lead to error or do not execute the callback function 
+ 
+ How to create your own promise in javascript ?
+ It is created with predefine function inside js lib
+
+  1] do an async task
+  
+  2] password encription before storing in database
+  
+  3] Note resolve and reject are one of the core function in promise it will help you to know the whether data will be forewarded to next then function
+  
+  4] then() function will only be executed only resolve is called in promise
+
+ */
+
+const promiseVal = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("\n-----------Example 1 -----------");
+
+    console.log("Async Task 1 is Completed !!");
+    resolve();
+  }, 5000);
+});
+
+promiseVal.then(() => console.log("Promise 1 is consumed !!"));
+
+// industry based syntax format
+
+new Promise((resolve, reject) => {
+  // async function
+  setTimeout(() => {
+    console.log("\n-----------Example 2 -----------");
+
+    console.log("Async Function 2 is Completed !");
+    resolve();
+  }, 5000);
+}).then(() => console.log("Promise 2 is Completed !!"));
+
+// example 3
+
+new Promise(function (resolve, reject) {
+  setTimeout(() => {
+    console.log("\n-----------Example 3 -----------");
+
+    let error = false;
+
+    if (!error) {
+      resolve({
+        username: "Darsh",
+        skill: "full stack developer",
+        email: "darsh@gmail.com",
+        password: "123456",
+      });
+    } else {
+      reject("ERROR : Something went wrong !");
+
+      // if your declaring for reject then catch statement is must otherwise will lead to error
+    }
+  }, 5000);
+})
+  .then((res) => {
+    console.log(res);
+    return res;
+    // to get object indiviual value you need to return them in parent then() and chain them with new then() which will
+    // parent  then return will be pass on as input of next then function without return it will show undefine error.
+  })
+  .then((res) => console.log(res.username, res.email, res.skill, res.password))
+  .catch((error) => console.log(error))
+  .finally(() => console.log("Promise Execution is completed !"));
+
+// example 4
