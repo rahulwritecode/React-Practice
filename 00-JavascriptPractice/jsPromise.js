@@ -129,7 +129,7 @@ new Promise(function (resolve, reject) {
   setTimeout(() => {
     console.log("\n-----------Example 3 -----------");
 
-    let error = false;
+    let error = true;
 
     if (!error) {
       resolve({
@@ -156,3 +156,36 @@ new Promise(function (resolve, reject) {
   .finally(() => console.log("Promise Execution is completed !"));
 
 // example 4
+/* but another approach to handle promise is using async await function */
+
+const promiseData = new Promise(function (resolve, reject) {
+  setTimeout(() => {
+    console.log("\n-----------Example 4 -----------");
+
+    let error = false;
+
+    if (!error) {
+      resolve({
+        username: "Darsh",
+        skill: "full stack developer",
+        email: "darsh@gmail.com",
+        password: "123456",
+      });
+    } else {
+      reject("ERROR : Something went wrong !");
+
+      // if your declaring for reject then catch statement is must otherwise will lead to error
+    }
+  }, 5000);
+});
+
+async function promiseHandle() {
+  try {
+    const result = await promiseData;
+    console.log(result);
+  } catch (error) {
+    console.log("Error : Something went wrong !", error);
+  }
+}
+
+promiseHandle();
